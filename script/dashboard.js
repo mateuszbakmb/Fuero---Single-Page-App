@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", ()=>{
-  
+
     //setting random notifications
     const notifications = [{
       message: 'Error!',
@@ -73,8 +73,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
     navigation.querySelectorAll('a').forEach(elem=>{
       elem.addEventListener('click', ()=>{
         if(elem.classList=='nav-link'){
-          document.querySelector('h2').textContent = `${elem.parentNode.parentNode.parentNode.firstElementChild.textContent} - ${elem.textContent}`
-        } else {document.querySelector('h2').textContent = elem.textContent}
+          document.querySelectorAll('h2').forEach(head=>{
+            head.textContent = `${elem.parentNode.parentNode.parentNode.firstElementChild.textContent} - ${elem.textContent}`;
+          })
+        } else {
+          document.querySelectorAll('h2').forEach(head=>{
+            head.textContent = elem.textContent;
+          })
+        }
       })
     });
 
@@ -84,7 +90,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     });
 
     //draggable window
-    const dragWindow = document.querySelector("#window");
+    const dragWindow = document.querySelector(".window");
     const draggable = document.querySelector(".draggable");
 
     //detecting if element is moving
