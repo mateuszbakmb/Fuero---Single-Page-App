@@ -4,9 +4,9 @@ Full website at https://mateuszbakmb.github.io/Fuero---Single-Page-App/
 
 Project created as a first part of a recruitment process at Fuero Games.
 
-Normally the login would be possible only after entering provided credentials while using fetch and connecting to localhost:5000. <br>
-However, for obvious reasons, I commented it out in my github version and logging is possible using any username/password. <br>
-In this project I was supposed complete the following tasks:
+**Normally the login would be possible only after entering provided credentials while using fetch and connecting to localhost:5000. <br>
+However, for obvious reasons, I commented it out in my github version and logging is possible using any username/password.** <br>
+In this project I was supposed to complete the following tasks:
 
 ###Layout should contain 3 views Login, Dashboard, Configuration:
 
