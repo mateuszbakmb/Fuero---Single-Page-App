@@ -30,9 +30,9 @@ document.querySelector('#logIn').addEventListener("click", (e)=>{
   .then(response => {
     console.log('Success:', response)
     if(response===200){
-      console.log('logged in')
       document.querySelector('.invalid').classList.add('hidden')
       document.querySelector('.loginBox').classList.remove('redShadow')
+      console.log('success')
     } else {
       document.querySelector('.invalid').classList.remove('hidden')
       document.querySelector('.loginBox').classList.add('redShadow')
@@ -40,6 +40,4 @@ document.querySelector('#logIn').addEventListener("click", (e)=>{
   })
   .catch(error => console.error('Error:', error));
 })
-
-
 })
