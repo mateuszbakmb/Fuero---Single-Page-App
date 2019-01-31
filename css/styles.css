@@ -42,6 +42,53 @@ body {
   font-size: 1.2rem;
   z-index: 100;
   height: 80px;
+  background-color: #000;
+}
+
+#topNav a {
+  color: #e04b27;
+  font-weight: bold;
+}
+
+#topNav > ul > li > a > span{
+  position: relative;
+}
+
+#topNav > ul > li > a > span:after {
+  content: "";
+  position: absolute;
+  bottom:0;
+  left:0;
+  width: 100%;
+  height: 3px;
+  background: #d94623;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all .3s linear;
+}
+
+#topNav ul > li > a > span:hover:after {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+#topNav > ul > li:nth-child(2) > a > i:hover {
+  animation: rotating 1.5s linear infinite;
+}
+
+@keyframes rotating {
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+#topNav > ul > li:nth-child(1) > a > i:hover {
+  animation: breathing 1s infinite ease-in-out;
+}
+
+@keyframes breathing {
+  0%{transform:scale(1)}
+  50%{transform:scale(1.1)}
 }
 
 #navigation {
@@ -50,7 +97,7 @@ body {
   left: 0;
   height: 100%;
   min-height: 100vh;
-  background-color: #999999;
+  background-color: #000;
   font-size: 1.2rem;
   padding: 80px 0;
   overflow: auto;
@@ -88,12 +135,12 @@ a[data-toggle="collapse"] {
 }
 
 #navigation ul li a:hover{
-background-color: #4a4a4a;
+background-color: #d94623;
 }
 
 #navigation ul li:active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #4a4a4a;
+    background: #d94623;
 }
 
 /* scrollbar */
@@ -102,24 +149,24 @@ background-color: #4a4a4a;
 }
 
 #navigation::-webkit-scrollbar-track {
-  background: #e0e0e0;
+  background: #cdcdcd;
 }
 
 #navigation::-webkit-scrollbar-thumb {
-  background: #818181;
+  background: #be3514;
 }
 
 #navigation::-webkit-scrollbar-thumb:hover {
-  background: #696969;
+  background: #ad2909;
 }
 
 /* window */
-#window{
+.window{
   height: calc(100vh - 83px);
 }
 
-#window h2 {
-  margin: 1rem;
+h2 {
+  margin: 2rem;
 }
 
 .draggable {
@@ -156,27 +203,32 @@ background-color: #4a4a4a;
 }
 
 .error {
-  color: #d40000;
+  color: #ff0000;
   font-weight: bold;
 }
 
 .warning {
-  color: #f08900;
+  color: #ff9200;
   font-weight: bold;
 }
 
 .info {
-  color: #0072f9;
+  color: #0075ff;
   font-weight: bold;
 }
 
 .time {
   font-size: 0.9rem;
+  color: #fff;
 }
 
 .closeNot {
   cursor:pointer;
   margin: 0 10px;
   font-size: 1rem;
-  color: #535353;
+  color: #d94623;
+  transition: transform 0.4s;
+}
+.closeNot:hover {
+  transform: scale(1.1)
 }
